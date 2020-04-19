@@ -17,8 +17,8 @@ public:
 	~stack();   		
 
 	void push(T);
-	int pop();
-	int top();
+	void pop();
+	T peak();
 
 	int size();
 	bool empty();
