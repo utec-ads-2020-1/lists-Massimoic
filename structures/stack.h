@@ -16,7 +16,12 @@ public:
 	stack(int size = MAX);
 	~stack();   		
 
-	void push(T);
+	void push(T) {
+		if( capacity - top = 0) {
+			capacity *= 2;
+			T* temp = new T(capacity);
+		}
+	}
 	void pop();
 	T peak();
 

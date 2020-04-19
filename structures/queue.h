@@ -12,12 +12,20 @@ class queue {
 	int top;
 	int capacity;
 
+	void copy(T data) {
+		
+	}
+	
 public:
 	queue(int size = MAX);
 	~queue();
 
 	void push(T) {
-	    if()
+	    if(capacity - top = 0) {
+			capacity *= 2;
+			T* temp = new T(capacity);
+
+		}
 	}
 	void pop();
 	T front();
