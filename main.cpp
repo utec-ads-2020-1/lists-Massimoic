@@ -8,6 +8,8 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    Tester::execute();
-    return EXIT_SUCCESS;
+
+    /*Tester::execute();
+    return EXIT_SUCCESS;*/
+    return 0;
 }
