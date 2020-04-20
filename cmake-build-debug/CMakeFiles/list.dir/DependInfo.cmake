@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/__DATA/Documents/UTEC/ADS2020-1/_List/lists-Massimoic/main.cpp" "D:/__DATA/Documents/UTEC/ADS2020-1/_List/lists-Massimoic/cmake-build-debug/CMakeFiles/list.dir/main.cpp.obj"
-  "D:/__DATA/Documents/UTEC/ADS2020-1/_List/lists-Massimoic/mock/mocker.cpp" "D:/__DATA/Documents/UTEC/ADS2020-1/_List/lists-Massimoic/cmake-build-debug/CMakeFiles/list.dir/mock/mocker.cpp.obj"
-  "D:/__DATA/Documents/UTEC/ADS2020-1/_List/lists-Massimoic/test/tester.cpp" "D:/__DATA/Documents/UTEC/ADS2020-1/_List/lists-Massimoic/cmake-build-debug/CMakeFiles/list.dir/test/tester.cpp.obj"
+  "C:/Users/franc/CLionProjects/lists-Massimoic/main.cpp" "C:/Users/franc/CLionProjects/lists-Massimoic/cmake-build-debug/CMakeFiles/list.dir/main.cpp.obj"
+  "C:/Users/franc/CLionProjects/lists-Massimoic/mock/mocker.cpp" "C:/Users/franc/CLionProjects/lists-Massimoic/cmake-build-debug/CMakeFiles/list.dir/mock/mocker.cpp.obj"
+  "C:/Users/franc/CLionProjects/lists-Massimoic/test/tester.cpp" "C:/Users/franc/CLionProjects/lists-Massimoic/cmake-build-debug/CMakeFiles/list.dir/test/tester.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
