@@ -1,3 +1,4 @@
+/*
 #ifndef TESTER_H
 #define TESTER_H
 
@@ -59,4 +60,4 @@ class Tester {
         static void execute();
 };
 
-#endif
+#endif*/
