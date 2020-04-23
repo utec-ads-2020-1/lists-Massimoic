@@ -2,6 +2,7 @@
 //#include "test/tester.h"
 #include "structures/queue.h"
 #include "structures/stack.h"
+#include "structures/lists/forward.h"
 
 
 using namespace std;
@@ -54,7 +55,7 @@ int main() {
     cout << sTest->getCapacity() << endl;*/
 
     // Queue test:...
-    auto* qTest = new queue<int>(4);
+    /*auto* qTest = new queue<int>(4);
     //cout << qTest->back() << endl;
     //cout << qTest->front() << endl;
     qTest->push(10);
@@ -69,7 +70,30 @@ int main() {
     qTest->pop();
     cout << "Front: " << qTest->front() << endl;
     cout << "Back: " << qTest->back() << endl;
-    cout << "Size: " << qTest->size() << endl;
+    cout << "Size: " << qTest->size() << endl;*/
+
+    ForwardList<int> lista;
+    cout << "Pushing 10... " << endl;
+    lista.push_front(10);
+    cout << "front: " << lista.front() << endl;
+    cout << "size: " << lista.size() << "\n\n";
+    cout << "Pushing 20... " << endl;
+    lista.push_front(20);
+    cout << "front: " << lista.front() << endl;
+    cout << "size: " << lista.size() << "\n\n";
+    cout << "Popping front..." << endl;
+    //lista.pop_front();
+    cout << "front: " << lista.front() << endl;
+    cout << "size: " << lista.size() << endl;
+    lista.push_front(33);
+    lista.push_front(44);
+    lista.push_front(55);
+    lista.push_front(66);
+    cout << "------ operator[] : "<< endl << endl;
+    cout << lista[0] << " ";
+    cout << lista[1] << " ";
+    cout << lista[2] << " ";
+    cout << lista[3] << endl;
 
     return 0;
 }

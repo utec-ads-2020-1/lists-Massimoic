@@ -3,6 +3,10 @@
 
 CMakeFiles/list.dir/main.cpp.obj
  C:/Users/franc/CLionProjects/lists-Massimoic/main.cpp
+ C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/forward.h
+ C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/iterators/forward_iterator.h
+ C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/list.h
+ C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/node.h
  C:/Users/franc/CLionProjects/lists-Massimoic/structures/queue.h
  C:/Users/franc/CLionProjects/lists-Massimoic/structures/stack.h
 CMakeFiles/list.dir/mock/mocker.cpp.obj
