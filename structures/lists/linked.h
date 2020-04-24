@@ -1,18 +1,51 @@
 #ifndef LINKED_H
 #define LINKED_H
 
+#include <stdexcept>
 #include "list.h"
 #include "iterators/bidirectional_iterator.h"
-
+using namespace std;
 // TODO: Implement all methods
 template <typename T>
 class LinkedList : public List<T> {
     public:
-        LinkedList() : List<T>() {}
+        LinkedList() : List<T>() {
+            this->head = this->tail = nullptr;
+            this->nodes =0;
+        }
 
-        T front();
-        T back();
-        void push_front(T);
+        T front() {
+            if(this->head) {
+                return this->head.data;
+            }
+            else {
+                throw out_of_range("Empty list");
+            }
+        }
+        T back() {
+            if(this->tail) {
+                return this->tail->data;
+            }
+            else {
+                throw out_of_range("Empty list");
+            }
+        }
+
+
+        void push_front(T value) {
+            auto newNode = new Node<T>;
+            newNode->data = value;
+            if(!this->head) {
+                this->head = newNode;
+                this->tail = newNode;
+            }
+            else {
+                this->head->prev = newNode;
+                newNode->next = this->head;
+                this->head = newNode;
+            }
+            this->nodes++;
+        }
         void push_back(T);
         void pop_front();
         void pop_back();

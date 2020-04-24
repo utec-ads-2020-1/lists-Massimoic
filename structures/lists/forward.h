@@ -64,7 +64,9 @@ public:
     }
 
         void pop_front(){
+        auto temp = this->head;
         this->head = this->head->next;
+        delete temp;
         this->nodes--;
     }
 
@@ -75,6 +77,7 @@ public:
             temp = temp->next;
         }
         this->tail = temp;
+        delete this->tail->next;
         this->nodes--;
     }
 
@@ -101,7 +104,9 @@ public:
         }
     }
 
-        void sort(){}
+        void sort() {
+
+    }
 
         void reverse(){}
 
