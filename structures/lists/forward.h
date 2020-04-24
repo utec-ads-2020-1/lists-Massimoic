@@ -13,6 +13,7 @@ public:
     ForwardList() : List<T>() {
         this->head = nullptr;
         this->nodes=0;
+        this->tail = nullptr;
     }
         T front(){
         if(!empty()) {
@@ -21,7 +22,14 @@ public:
             throw out_of_range("Empty list");
         }
     }
-        T back(){}
+        T back() {
+        if(!empty()) {
+            return this->tail->data;
+        }
+        else {
+            throw out_of_range("Empty list");
+        }
+    }
 
         void push_front(T value){
         auto newNode = new Node<T>;
@@ -29,6 +37,7 @@ public:
 
         if(!this->head) {
             this->head = newNode;
+            this->tail = newNode;
         }
         else {
             newNode->next = this->head;
@@ -38,14 +47,36 @@ public:
 
     }
 
-        void push_back(T){}
+        void push_back(T value) {
+        auto newNode = new Node<T>;
+
+        if(!this->head) { //empty
+            newNode->data = value;
+            this->tail = newNode;
+            this-> head = newNode;
+        }
+        else {
+            this->tail->next = newNode;
+            this->tail = newNode;
+            this->tail->data = value;
+        }
+        this->nodes++;
+    }
 
         void pop_front(){
         this->head = this->head->next;
         this->nodes--;
     }
 
-        void pop_back(){}
+        void pop_back() {
+        auto temp = new Node<T>;
+        temp = this->head;
+        for(int i = 0; i < this->nodes-2 ; i++) {
+            temp = temp->next;
+        }
+        this->tail = temp;
+        this->nodes--;
+    }
 
         T operator[](int index){
         auto temp = new Node<T>;
@@ -57,14 +88,17 @@ public:
     }
 
         bool empty(){
-            return (this->head  == 0 && this->nodes == 0);
+            return !this->head;
         }
 
         int size(){
         return this->nodes;
     }
         void clear(){
-        this->head->killSelf();
+        if(!empty()) {
+            this->head->killSelf();
+            this->nodes =0;
+        }
     }
 
         void sort(){}

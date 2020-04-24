@@ -82,7 +82,7 @@ int main() {
     cout << "front: " << lista.front() << endl;
     cout << "size: " << lista.size() << "\n\n";
     cout << "Popping front..." << endl;
-    //lista.pop_front();
+    lista.pop_front();
     cout << "front: " << lista.front() << endl;
     cout << "size: " << lista.size() << endl;
     lista.push_front(33);
@@ -93,7 +93,25 @@ int main() {
     cout << lista[0] << " ";
     cout << lista[1] << " ";
     cout << lista[2] << " ";
-    cout << lista[3] << endl;
+    cout << lista[3] << endl << endl;
+
+    cout << "Pushback..." << endl;
+    lista.push_back(1);
+    lista.push_back(2);
+    lista.push_back(3);
+    lista.push_back(4);
+    cout << lista.back() << endl;
+    cout << "Size: " << lista.size() << endl;
+    cout << "Front : " << lista.front() << endl;
+    for(int i = 0 ; i < lista.size() -1 ; i ++ ) {
+        cout << lista[i] << " ";
+    }
+    cout << "\n\n";
+    cout << "Testing pop_back..." << "\n\n";
+    lista.pop_back();
+    for(int i = 0 ; i < lista.size() -1 ; i ++ ) {
+        cout << lista[i] << " ";
+    }
 
     return 0;
 }
