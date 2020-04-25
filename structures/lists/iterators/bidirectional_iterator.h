@@ -10,18 +10,18 @@ class BidirectionalIterator {
         Node<T> *current;
 
     public:
-        BidirectionalIterator();
-        BidirectionalIterator(Node<T>*);
+        BidirectionalIterator(){}
+        BidirectionalIterator(Node<T>*){}
 
-        BidirectionalIterator<T> operator=(BidirectionalIterator<T>);
+        BidirectionalIterator<T> operator=(BidirectionalIterator<T>){}
 
-        bool operator!=(BidirectionalIterator<T>);
+        bool operator!=(BidirectionalIterator<T>){}
 
-        BidirectionalIterator<T> operator++();
+        BidirectionalIterator<T> operator++(){}
 
-        BidirectionalIterator<T> operator--();
+        BidirectionalIterator<T> operator--(){}
 
-        T operator*();
+        T operator*(){}
 };
 
 #endif

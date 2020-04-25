@@ -16,7 +16,7 @@ class LinkedList : public List<T> {
 
         T front() {
             if(this->head) {
-                return this->head.data;
+                return this->head->data;
             }
             else {
                 throw out_of_range("Empty list");
@@ -35,29 +35,29 @@ class LinkedList : public List<T> {
         void push_front(T value) {
             auto newNode = new Node<T>;
             newNode->data = value;
-            if(!this->head) {
+            if (!this->head) {
                 this->head = newNode;
                 this->tail = newNode;
-            }
-            else {
+            } else {
                 this->head->prev = newNode;
                 newNode->next = this->head;
                 this->head = newNode;
             }
             this->nodes++;
         }
-        void push_back(T);
-        void pop_front();
-        void pop_back();
-        T operator[](int);
-        bool empty();
-        int size();
-        void clear();
-        void sort();
-        void reverse();
 
-        BidirectionalIterator<T> begin();
-	    BidirectionalIterator<T> end();
+        void push_back(T){}
+        void pop_front(){}
+        void pop_back(){}
+        T operator[](int){}
+        bool empty(){}
+        int size(){}
+        void clear(){}
+        void sort(){}
+        void reverse(){}
+
+        BidirectionalIterator<T> begin(){}
+	    BidirectionalIterator<T> end(){}
 
         string name() {
             return "Linked List";
@@ -73,7 +73,7 @@ class LinkedList : public List<T> {
          * any element: they are transferred, no matter whether x is an lvalue or an rvalue, 
          * or whether the value_type supports move-construction or not.
         */
-        void merge(LinkedList<T>&);
+        void merge(LinkedList<T>&){}
 };
 
 #endif

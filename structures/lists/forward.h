@@ -90,6 +90,7 @@ public:
         return temp->data;
     }
 
+
         bool empty(){
             return !this->head;
         }
@@ -108,10 +109,37 @@ public:
 
     }
 
-        void reverse(){}
+        void reverse() {
+        if(this->head) {
+            T tempArray[this->nodes];
+            int count = 0;
+            auto itr = begin();
+            for(; itr != end();  ++itr ) {
+                tempArray[count] = *itr;
+                count++;
+            }
+            for(int i = this->nodes-1; i >= 0 ; i--) {
+                pop_front();
+                push_back(tempArray[i]);
+            }
+        }
+        else {
+            throw out_of_range("List is empty!");
+        }
+    }
 
-        ForwardIterator<T> begin(){}
-	    ForwardIterator<T> end(){}
+        ForwardIterator<T> begin(){
+        if(this->head) {
+            auto it = ForwardIterator<T>(this->head);
+            return it;
+        }
+    }
+	    ForwardIterator<T> end() {
+            if(this->tail) {
+                auto it = ForwardIterator<T>(this->tail->next);
+                return it;
+            }
+    }
 
         string name() {
             return "Forward List";
@@ -127,7 +155,14 @@ public:
          * any element: they are transferred, no matter whether x is an lvalue or an rvalue,
          * or whether the value_type supports move-construction or not.
         */
-        void merge(ForwardList<T>&);
+        void merge(ForwardList<T>& list2) {
+            auto itr2 = list2.begin();
+
+            for(; itr2 != list2.end() ; ++itr2) {
+                push_back(*itr2);
+                list2.pop_front();
+            }
+        }
 };
 
 #endif

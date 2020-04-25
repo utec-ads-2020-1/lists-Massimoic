@@ -33,9 +33,9 @@ int main() {
     cout << test->empty() << "\n\n";
     cout << test->peak() << endl;
     test->pop();
-    cout << test->peak() << endl;*/
+    cout << test->peak() << endl;*//*
 
-    /*auto* sTest = new stack<int>(5);
+    *//*auto* sTest = new stack<int>(5);
     sTest->push(10);
     sTest->push(20);
     sTest->push(30);
@@ -52,10 +52,10 @@ int main() {
     sTest->push(80);
     cout << sTest->peak() << endl;
     cout << sTest->size() << endl;
-    cout << sTest->getCapacity() << endl;*/
+    cout << sTest->getCapacity() << endl;
 
     // Queue test:...
-    /*auto* qTest = new queue<int>(4);
+    *//*auto* qTest = new queue<int>(4);
     //cout << qTest->back() << endl;
     //cout << qTest->front() << endl;
     qTest->push(10);
@@ -103,15 +103,42 @@ int main() {
     cout << lista.back() << endl;
     cout << "Size: " << lista.size() << endl;
     cout << "Front : " << lista.front() << endl;
-    for(int i = 0 ; i < lista.size() -1 ; i ++ ) {
+    for(int i = 0 ; i < lista.size()  ; i ++ ) {
         cout << lista[i] << " ";
     }
     cout << "\n\n";
     cout << "Testing pop_back..." << "\n\n";
     lista.pop_back();
-    for(int i = 0 ; i < lista.size() -1 ; i ++ ) {
+    for(int i = 0 ; i < lista.size()  ; i ++ ) {
         cout << lista[i] << " ";
     }
+
+    cout << "\n\n";
+    cout << "Reverse/Clear/Iterator test..." << endl;
+    lista.reverse();
+    for(int i = 0 ;i < lista.size() ; i++) {
+        cout <<lista[i] << " ";
+    }
+    cout << "\n\n" << "Merge test: " << endl;
+    ForwardList<int> lista2;
+    lista2.push_back(100);
+    lista2.push_back(101);
+    lista2.push_back(102);
+    lista2.push_back(103);
+    lista2.push_back(104);
+    lista2.push_back(105);
+    lista.merge(lista2);
+
+    for(int i = 0 ; i < lista.size() ; i++) {
+        cout << lista[i] << " ";
+    }
+    try {
+        cout << endl << "front: " << lista2.front() << endl << "back: " << lista2.back() << endl;
+    }
+    catch (exception error) {
+        cout << "--- " << error.what() << endl;
+    }
+
 
     return 0;
 }

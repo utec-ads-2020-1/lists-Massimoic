@@ -16,18 +16,22 @@ class ForwardIterator {
         }
 
         ForwardIterator<T> operator=(ForwardIterator<T> it){
-
+            current = it;
+            return current;
         }
 
         bool operator!=(ForwardIterator<T> it) {
-            return (it.current != this->current);
+            return (it.current != current);
         }
 
         ForwardIterator<T> operator++(){
-            return this->current->next;
+            current = current->next;
+            return current;
         }
 
-        T operator*();
+        T operator*(){
+            return current->data;
+        }
 };
 
 #endif

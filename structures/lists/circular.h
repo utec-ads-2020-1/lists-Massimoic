@@ -10,21 +10,21 @@ class CircularLinkedList : public List<T> {
     public:
         CircularLinkedList() : List<T>() {}
 
-        T front();
-        T back();
-        void push_front(T);
-        void push_back(T);
-        void pop_front();
-        void pop_back();
-        T operator[](int);
-        bool empty();
-        int size();
-        void clear();
-        void sort();
-        void reverse();
+        T front(){}
+        T back(){}
+        void push_front(T){}
+        void push_back(T){}
+        void pop_front(){}
+        void pop_back(){}
+        T operator[](int){}
+        bool empty(){}
+        int size(){}
+        void clear(){}
+        void sort(){}
+        void reverse(){}
 
-        BidirectionalIterator<T> begin();
-	    BidirectionalIterator<T> end();
+        BidirectionalIterator<T> begin(){}
+	    BidirectionalIterator<T> end(){}
 
         string name() {
             return "Circular Linked List";
@@ -40,7 +40,7 @@ class CircularLinkedList : public List<T> {
          * any element: they are transferred, no matter whether x is an lvalue or an rvalue, 
          * or whether the value_type supports move-construction or not.
         */
-        void merge(CircularLinkedList<T>&);
+        void merge(CircularLinkedList<T>&){}
 };
 
 #endif
