@@ -19,7 +19,7 @@ public:
         if(!empty()) {
             return this->head->data;
         } else {
-            throw out_of_range("Empty list");
+            throw out_of_range("Empty FW list");
         }
     }
         T back() {
@@ -27,7 +27,7 @@ public:
             return this->tail->data;
         }
         else {
-            throw out_of_range("Empty list");
+            throw out_of_range("Empty FW list");
         }
     }
 
@@ -106,8 +106,9 @@ public:
     }
         void clear(){
         if(!empty()) {
-            this->head->killSelf();
-            this->nodes =0;
+            while(this->head) {
+                pop_front();
+            }
         }
     }
 
@@ -174,13 +175,7 @@ public:
          * any element: they are transferred, no matter whether x is an lvalue or an rvalue,
          * or whether the value_type supports move-construction or not.
         */
-        void merge(ForwardList<T>& list2) {
-            /*auto itr2 = list2.begin();
-
-            for(; itr2 != list2.end() ; ++itr2) {
-                push_back(*itr2);
-                list2.pop_front();
-            }*/
+        void merge(ForwardList<T> &list2) {
             T tempArray[this->nodes + list2.size()];
             auto itr1 = begin();
             auto itr2 = list2.begin();
@@ -204,6 +199,9 @@ public:
             }
             for(int i = 0 ; i < size ; i++) {
                 push_back(tempArray[i]);
+            }
+            while(list2.head){
+                list2.pop_front();
             }
         }
 };

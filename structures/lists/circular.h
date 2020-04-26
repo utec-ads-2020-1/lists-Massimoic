@@ -82,21 +82,37 @@ private:
         }
 
         void pop_front(){
-            auto temp = this->head;
-            this->head = this->head->next;
-            this->sentinel->next = this->head;
-            this->head->prev = this->sentinel;
-            delete temp;
-            this->nodes--;
+            if(this->nodes == 1){
+                auto temp = this->head;
+                this->head = this->tail = this->sentinel = nullptr;
+                delete temp;
+                this->nodes--;
+            }
+            else {
+                auto temp = this->head;
+                this->head = this->head->next;
+                this->sentinel->next = this->head;
+                this->head->prev = this->sentinel;
+                delete temp;
+                this->nodes--;
+            }
         }
 
         void pop_back(){
-            auto temp = this->tail;
-            this->tail = this->tail->prev;
-            this->tail->next = this->sentinel;
-            this->sentinel->prev = this->tail;
-            delete temp;
-            this->nodes--;
+            if(this->nodes == 1) {
+                auto temp = this->tail;
+                this->tail = this->head = this->sentinel = nullptr;
+                delete temp;
+                this->nodes = 0;
+            }
+            else {
+                auto temp = this->tail;
+                this->tail = this->tail->prev;
+                this->tail->next = this->sentinel;
+                this->sentinel->prev = this->tail;
+                delete temp;
+                this->nodes--;
+            }
         }
 
         T operator[](int index){
@@ -117,9 +133,9 @@ private:
 
         void clear(){
             if(!empty()) {
-                delete this->sentinel;
-                this->head->killSelf();
-                this->nodes = 0;
+                while(this->head) {
+                    pop_front();
+                }
             }
         }
 
@@ -219,6 +235,10 @@ private:
             for(int i = 0 ; i < size ; i++) {
                 push_back(tempArray[i]);
             }
+            while(list2.head){
+                list2.pop_front();
+            }
+
         }
 };
 

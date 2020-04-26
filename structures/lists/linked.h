@@ -64,11 +64,19 @@ class LinkedList : public List<T> {
         }
 
         void pop_front() {
-            auto temp = this->head;
-            this->head = this->head->next;
-            this->head->prev = nullptr;
-            delete temp;
-            this->nodes--;
+            if(this->nodes == 1) {
+                auto temp = this->head;
+                this->head = this->tail = nullptr;
+                delete temp;
+                this->nodes = 0;
+            }
+            else {
+                auto temp = this->head;
+                this->head = this->head->next;
+                this->head->prev = nullptr;
+                delete temp;
+                this->nodes--;
+            }
         }
 
         void pop_back() {
@@ -190,22 +198,16 @@ class LinkedList : public List<T> {
                 count++;
             }
 
-            cout << endl;
-            for(int i =0 ; i <size ; i++) {
-                cout << tempArray[i] << " ";
-            }
             this->mergeSort(tempArray, 0, size - 1);
-            cout << endl;
-            for(int i =0 ; i <size ; i++) {
-                cout << tempArray[i] << " ";
-            }
-            cout << endl;
 
             for(int i = 0 ; i < tempSize ; i++) {
                 pop_front();
             }
             for(int i = 0 ; i < size ; i++) {
                 push_back(tempArray[i]);
+            }
+            while(list2.head){
+                list2.pop_front();
             }
         }
 };

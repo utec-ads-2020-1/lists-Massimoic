@@ -14,7 +14,7 @@ struct Node {
         }
         else {
             delete this;
-            prev-> killSelf();
+            prev->killSelf();
         }
     }
 };

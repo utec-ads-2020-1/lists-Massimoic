@@ -67,16 +67,8 @@ class List {
         }
 
     void test(){}
-        virtual T front() {
-            if(head != nullptr) {
-                return head->data;
-            }
-        }
-        virtual T back() {
-            if( tail != nullptr) {
-                return tail->data;
-            }
-        }
+        virtual T front() = 0;
+        virtual T back() = 0;
         virtual void push_front(T) = 0;
         virtual void push_back(T) = 0;
         virtual void pop_front() = 0;
