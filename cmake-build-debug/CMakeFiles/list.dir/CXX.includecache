@@ -15,6 +15,24 @@ structures/stack.h
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/stack.h
 structures/lists/forward.h
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/forward.h
+structures/lists/linked.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/linked.h
+structures/lists/circular.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/circular.h
+
+C:/Users/franc/CLionProjects/lists-Massimoic/mock/mocker.h
+random
+-
+type_traits
+-
+
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/circular.h
+stdexcept
+-
+list.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/list.h
+iterators/bidirectional_iterator.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/iterators/bidirectional_iterator.h
 
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/forward.h
 list.h
@@ -22,9 +40,21 @@ C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/list.h
 iterators/forward_iterator.h
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/iterators/forward_iterator.h
 
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/iterators/bidirectional_iterator.h
+../node.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/node.h
+
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/iterators/forward_iterator.h
 ../node.h
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/node.h
+
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/linked.h
+stdexcept
+-
+list.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/list.h
+iterators/bidirectional_iterator.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/iterators/bidirectional_iterator.h
 
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/list.h
 node.h
@@ -37,4 +67,24 @@ C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/node.h
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/queue.h
 
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/stack.h
+
+C:/Users/franc/CLionProjects/lists-Massimoic/test/tester.cpp
+tester.h
+C:/Users/franc/CLionProjects/lists-Massimoic/test/tester.h
+
+C:/Users/franc/CLionProjects/lists-Massimoic/test/tester.h
+stdexcept
+-
+iostream
+-
+assert.h
+-
+../mock/mocker.h
+C:/Users/franc/CLionProjects/lists-Massimoic/mock/mocker.h
+../structures/lists/forward.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/forward.h
+../structures/lists/linked.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/linked.h
+../structures/lists/circular.h
+C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/circular.h
 

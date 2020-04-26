@@ -71,8 +71,7 @@ public:
     }
 
         void pop_back() {
-        auto temp = new Node<T>;
-        temp = this->head;
+        auto temp = this->head;
         for(int i = 0; i < this->nodes-2 ; i++) {
             temp = temp->next;
         }
@@ -82,8 +81,7 @@ public:
     }
 
         T operator[](int index){
-        auto temp = new Node<T>;
-        temp = this->head;
+        auto temp = this->head;
         for(int i = 0; i < index ; i++) {
             temp = temp->next;
         }
