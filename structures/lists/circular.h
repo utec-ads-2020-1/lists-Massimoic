@@ -123,7 +123,22 @@ private:
             }
         }
 
-        void sort(){}
+        void sort(){
+            T tempArray[this->nodes];
+            int count = 0;
+            auto itr = begin();
+
+            for(; itr != end() ; ++itr) {
+                tempArray[count] = *itr;
+                count++;
+            }
+            this->mergeSort(tempArray, 0 ,this->nodes-1);
+
+            for(int i = 0 ; i < this->nodes ; i++) {
+                pop_front();
+                push_back(tempArray[i]);
+            }
+        }
 
         void reverse(){
             if(this->head) {
@@ -179,7 +194,32 @@ private:
          * any element: they are transferred, no matter whether x is an lvalue or an rvalue, 
          * or whether the value_type supports move-construction or not.
         */
-        void merge(CircularLinkedList<T>&){}
+        void merge(CircularLinkedList<T>& list2){
+            T tempArray[this->nodes + list2.size()];
+            auto itr1 = begin();
+            auto itr2 = list2.begin();
+            int size = this->nodes + list2.size();
+            int tempSize = this->nodes;
+            int count = 0;
+
+            for(; itr1 !=end() ; ++itr1) {
+                tempArray[count] = *itr1;
+                count++;
+            }
+            for(; itr2 != list2.end() ; ++itr2) {
+                tempArray[count] = *itr2;
+                count++;
+            }
+
+            this->mergeSort(tempArray, 0, (this->nodes + list2.size()) - 1);
+
+            for(int i = 0 ; i < tempSize ; i++) {
+                pop_front();
+            }
+            for(int i = 0 ; i < size ; i++) {
+                push_back(tempArray[i]);
+            }
+        }
 };
 
 #endif

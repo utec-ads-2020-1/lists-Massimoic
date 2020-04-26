@@ -1,4 +1,4 @@
-/*
+
 
 #include "tester.h"
 
@@ -188,4 +188,4 @@ void Tester::testCircularLinked(CircularLinkedList<T>* list) {
     --it;
     ASSERT(*it == elements[4], "The " + list->name() + " iterator is not working");
 }
-*/
+

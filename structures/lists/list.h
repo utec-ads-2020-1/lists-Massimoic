@@ -13,16 +13,50 @@ class List {
         Node<T>* tail;
         int nodes;
 
-        void mergeSort(T arr[],T l, T r) {
-
+        void mergeSort(T arr[],int l, int r) {
+            if(l < r) {
+                int m = (l+r)/2;
+                mergeSort(arr,l,m);
+                mergeSort(arr,m+1, r);
+                mergeArr(arr, l, m, r);
+            }
         }
 
-        void mergeArr(T arr[], T l, T m, T r) {
-            T first, second, merged;
-            T n1 = m - first + 1;
-            T n2 = second - m;
+        void mergeArr(T arr[], int l, int m, int r) {
+            int size1 = m - l + 1;
+            int size2 = r - m;
 
-            T left[n1], right[n2];
+            T left[size1], right[size2];
+
+            for (int i = 0 ; i < size1 ; i++) {
+                left[i] = arr[l + i];
+            }
+            for(int j = 0 ; j < size2 ; j++) {
+                right[j] = arr[m + j + 1];
+            }
+
+            int i = 0, j = 0;
+            int merged;
+            for(merged = l ; merged <= r && i < size1 && j < size2; merged++) {
+                if(left[i] <= right[j]) {
+                    arr[merged] = left[i];
+                    i++;
+                }
+                else {
+                    arr[merged] = right[j];
+                    j++;
+                }
+            }
+            for(; i < size1 ; i++) {
+                arr[merged] = left[i];
+                merged++;
+            }
+
+            for(; j < size2 ; j++) {
+                arr[merged] = right[j];
+                merged++;
+            }
+
         }
 
     public:

@@ -18,10 +18,11 @@ using namespace std;
     return EXIT_SUCCESS;
 }*/
 
+
 int main() {
     cout << "Hello world!" << endl;
     //stack test:...
-    /*stack<int>* test = new stack<int>(10);
+/*stack<int>* test = new stack<int>(10);
     cout << test->peak() << endl;
     cout << test->empty() << endl;
     test->push(2);
@@ -36,8 +37,9 @@ int main() {
     cout << test->peak() << endl;
     test->pop();
     cout << test->peak() << endl;*//*
+*/
 
-    *//*auto* sTest = new stack<int>(5);
+/*auto* sTest = new stack<int>(5);
     sTest->push(10);
     sTest->push(20);
     sTest->push(30);
@@ -57,7 +59,9 @@ int main() {
     cout << sTest->getCapacity() << endl;
 
     // Queue test:...
-    *//*auto* qTest = new queue<int>(4);
+
+*/
+/*auto* qTest = new queue<int>(4);
     //cout << qTest->back() << endl;
     //cout << qTest->front() << endl;
     qTest->push(10);
@@ -73,6 +77,7 @@ int main() {
     cout << "Front: " << qTest->front() << endl;
     cout << "Back: " << qTest->back() << endl;
     cout << "Size: " << qTest->size() << endl;*/
+
 
     ForwardList<int> lista;
     cout << "Pushing 10... " << endl;
@@ -121,25 +126,39 @@ int main() {
     for(int i = 0 ;i < lista.size() ; i++) {
         cout <<lista[i] << " ";
     }
-    cout << "\n\n" << "Merge test: " << endl;
-    ForwardList<int> lista2;
-    lista2.push_back(100);
-    lista2.push_back(101);
-    lista2.push_back(102);
-    lista2.push_back(103);
-    lista2.push_back(104);
-    lista2.push_back(105);
-    lista.merge(lista2);
 
+
+    cout << endl << " ---- Sort test ---- " << endl;
+    lista.sort();
+
+    for(int i = 0; i < lista.size(); i++) {
+        cout << lista[i] << " ";
+    }
+
+    cout << " ---- Merge test ----" << endl;
+    ForwardList<int> lista2;
+    lista2.push_back(105);
+    lista2.push_back(104);
+    lista2.push_back(103);
+    lista2.push_back(102);
+    lista2.push_back(101);
+    lista2.push_back(100);
+
+    cout << " --- Lista 1 ---" << endl;
     for(int i = 0 ; i < lista.size() ; i++) {
         cout << lista[i] << " ";
     }
-    try {
-        cout << endl << "front: " << lista2.front() << endl << "back: " << lista2.back() << endl;
+    cout << endl << " --- Lista 2 ---" << endl;
+    for(int i = 0 ; i < lista2.size() ; i++) {
+        cout << lista2[i] << " ";
     }
-    catch (exception error) {
-        cout << "--- " << error.what() << endl;
+    cout << endl << " --- Merged List --- " << endl;
+    lista.merge(lista2);
+    for(int i = 0 ; i < lista.size() ; i++) {
+        cout << lista[i] << " ";
     }
+
+
 
     cout << " --------------------- " << endl << " -- Testing Linked List --" << "\n\n";
     LinkedList<int> linked;
@@ -178,6 +197,33 @@ int main() {
     for(int i = 0 ; i < linked.size() ; i++) {
         cout << linked[i] << " ";
     }
+    linked.push_back(8);
+    linked.push_back(9);
+    linked.push_back(6);
+
+    LinkedList<int> linked2;
+    linked2.push_back(80);
+    linked2.push_back(45);
+    linked2.push_back(63);
+    linked2.push_back(21);
+    linked2.push_back(79);
+
+    cout << endl << " --- Linked Sort test --- " <<  endl;
+    for(int i = 0 ; i < linked.size() ; i++) {
+        cout << linked[i] << " ";
+    }
+    linked.sort();
+    cout << endl << " --- sorted --- " << endl;
+    for(int i = 0 ; i < linked.size() ; i++) {
+        cout << linked[i] << " ";
+    }
+
+    linked2.sort();
+    linked.merge(linked2);
+    cout << "\n\n --- Merge test ---" << endl;
+    for(int i = 0 ; i < linked.size() ; i++) {
+        cout << linked[i] << " ";
+    }
 
 
     cout << "\n\n" << "---- Testing Circular ----" << "\n\n";
@@ -211,6 +257,7 @@ int main() {
     for(int i = 0 ; i < circular.size() ; i++) {
         cout << circular[i] << " ";
     }
+    cout << endl << "Size: " << circular.size() << endl;
     cout << "\n\n";
     cout << " --- Reversing ---" << endl;
     circular.reverse();
@@ -221,3 +268,4 @@ int main() {
 
     return 0;
 }
+

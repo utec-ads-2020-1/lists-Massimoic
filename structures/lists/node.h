@@ -12,7 +12,10 @@ struct Node {
         if(next) {
             next->killSelf();
         }
-        delete this;
+        else {
+            delete this;
+            prev-> killSelf();
+        }
     }
 };
 

@@ -64,10 +64,18 @@ public:
     }
 
         void pop_front(){
-        auto temp = this->head;
-        this->head = this->head->next;
-        delete temp;
-        this->nodes--;
+        if(this->nodes == 1) {
+            auto temp = this->head;
+            this->head = this->tail = nullptr;
+            delete temp;
+            this->nodes = 0;
+        }
+        else {
+            auto temp = this->head;
+            this->head = this->head->next;
+            delete temp;
+            this->nodes--;
+        }
     }
 
         void pop_back() {
@@ -104,7 +112,20 @@ public:
     }
 
         void sort() {
+        T tempArray[this->nodes];
+        int count = 0;
+        auto itr = begin();
 
+        for(; itr != end() ; ++itr) {
+            tempArray[count] = *itr;
+            count++;
+        }
+        this->mergeSort(tempArray, 0 ,this->nodes-1);
+
+        for(int i = 0 ; i < this->nodes ; i++) {
+            pop_front();
+            push_back(tempArray[i]);
+        }
     }
 
         void reverse() {
@@ -154,11 +175,35 @@ public:
          * or whether the value_type supports move-construction or not.
         */
         void merge(ForwardList<T>& list2) {
-            auto itr2 = list2.begin();
+            /*auto itr2 = list2.begin();
 
             for(; itr2 != list2.end() ; ++itr2) {
                 push_back(*itr2);
                 list2.pop_front();
+            }*/
+            T tempArray[this->nodes + list2.size()];
+            auto itr1 = begin();
+            auto itr2 = list2.begin();
+            int size = this->nodes + list2.size();
+            int tempSize = this->nodes;
+            int count = 0;
+
+            for(; itr1 !=end() ; ++itr1) {
+                tempArray[count] = *itr1;
+                count++;
+            }
+            for(; itr2 != list2.end() ; ++itr2) {
+                tempArray[count] = *itr2;
+                count++;
+            }
+
+            this->mergeSort(tempArray, 0, (this->nodes + list2.size()) - 1);
+
+            for(int i = 0 ; i < tempSize ; i++) {
+                pop_front();
+            }
+            for(int i = 0 ; i < size ; i++) {
+                push_back(tempArray[i]);
             }
         }
 };
