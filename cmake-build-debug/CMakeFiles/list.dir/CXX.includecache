@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/franc/CLionProjects/lists-Massimoic/main.cpp
-iostream
--
-test/tester.h
-C:/Users/franc/CLionProjects/lists-Massimoic/test/tester.h
-structures/queue.h
-C:/Users/franc/CLionProjects/lists-Massimoic/structures/queue.h
-structures/stack.h
-C:/Users/franc/CLionProjects/lists-Massimoic/structures/stack.h
-structures/lists/forward.h
-C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/forward.h
-structures/lists/linked.h
-C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/linked.h
-structures/lists/circular.h
-C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/circular.h
-
 C:/Users/franc/CLionProjects/lists-Massimoic/mock/mocker.h
 random
 -
@@ -65,10 +49,6 @@ string
 -
 
 C:/Users/franc/CLionProjects/lists-Massimoic/structures/lists/node.h
-
-C:/Users/franc/CLionProjects/lists-Massimoic/structures/queue.h
-
-C:/Users/franc/CLionProjects/lists-Massimoic/structures/stack.h
 
 C:/Users/franc/CLionProjects/lists-Massimoic/test/tester.cpp
 tester.h

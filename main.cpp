@@ -14,23 +14,6 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    ForwardList<int>* list = new ForwardList<int>;
-    list->push_back(1);
-    list->push_back(2);
-    list->push_back(3);
-    list->push_back(4);
-    list->push_back(5);
-    auto it = list->begin();
-    cout << "elemento 1: " <<  " " << *it <<endl;
-    ++it;
-    cout << "elemento 2: "  << " " << *it <<endl;
-    ++it;
-    cout << "elemento 3: "  << " " << *it <<endl;
-    ++it;
-    cout << "elemento 4: "  << " " << *it <<endl;
-    ++it;
-    cout << "elemento 5: "  << " " << *it <<endl;
-
 
     Tester::execute();
 

@@ -49,6 +49,7 @@ public:
 
         void push_back(T value) {
         auto newNode = new Node<T>;
+        newNode->data = value;
 
         if(!this->head) { //empty
             newNode->data = value;
@@ -58,7 +59,7 @@ public:
         else {
             this->tail->next = newNode;
             this->tail = newNode;
-            this->tail->data = value;
+            this->tail->next = nullptr;
         }
         this->nodes++;
     }
@@ -176,16 +177,18 @@ public:
          * or whether the value_type supports move-construction or not.
         */
         void merge(ForwardList<T> &list2) {
-            T tempArray[this->nodes + list2.size()];
+            /*T tempArray[this->nodes + list2.size()];
             auto itr1 = begin();
             auto itr2 = list2.begin();
             int size = this->nodes + list2.size();
             int tempSize = this->nodes;
             int count = 0;
 
-            for(; itr1 !=end() ; ++itr1) {
-                tempArray[count] = *itr1;
-                count++;
+            if(this->head) {
+                for (; itr1 != end(); ++itr1) {
+                    tempArray[count] = *itr1;
+                    count++;
+                }
             }
             for(; itr2 != list2.end() ; ++itr2) {
                 tempArray[count] = *itr2;
@@ -202,6 +205,10 @@ public:
             }
             while(list2.head){
                 list2.pop_front();
+            }*/
+            auto it = list2.begin();
+            for(; it != list2.end() ; ++it) {
+                push_back(*it);
             }
         }
 };
