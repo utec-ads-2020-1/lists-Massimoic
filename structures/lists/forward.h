@@ -154,12 +154,15 @@ public:
             auto it = ForwardIterator<T>(this->head);
             return it;
         }
+        // Y aquí? Qué return?
     }
 	    ForwardIterator<T> end() {
             if(this->tail) {
                 auto it = ForwardIterator<T>(this->tail->next);
                 return it;
             }
+
+            // Y aquí? Qué return?
     }
 
         string name() {
@@ -207,6 +210,7 @@ public:
                 list2.pop_front();
             }*/
             auto it = list2.begin();
+            // No es la idea
             for(; it != list2.end() ; ++it) {
                 push_back(*it);
             }

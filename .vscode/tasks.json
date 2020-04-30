@@ -6,8 +6,9 @@
         {
             "label": "echo",
             "type": "shell",
-            "command": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\g++.exe",
+            "command": "g++",
             "args": [
+                "-std=c++14",
                 "-g", "main.cpp", "mock/mocker.cpp", "test/tester.cpp",
                 "-o", "lists.out"
             ],

@@ -80,6 +80,7 @@ class LinkedList : public List<T> {
         }
 
         void pop_back() {
+            // Falta
             auto temp = this->tail;
             this->tail = this->tail->prev;
             delete temp;

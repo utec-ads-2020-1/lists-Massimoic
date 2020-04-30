@@ -11,7 +11,7 @@ class BidirectionalIterator {
 
     public:
         BidirectionalIterator() = default;
-        BidirectionalIterator(Node<T>* node){
+        BidirectionalIterator(Node<T>* node){ // Si usamos explicit verás errores
             current = node;
         }
 
@@ -26,15 +26,16 @@ class BidirectionalIterator {
 
         BidirectionalIterator<T> operator++(){
             current = current->next;
-            return current;
+            return current; // Crear iteradores  en cada ejecución
         }
 
         BidirectionalIterator<T> operator--(){
             current = current->prev;
-            return current;
+            return current; // Crear iteradores  en cada ejecución
         }
 
         T operator*(){
+            // Si current es nullptr?
             return current->data;
         }
 };

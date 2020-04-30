@@ -26,6 +26,7 @@ public:
 	        data[++top] = element;
 	    }
 	    else {
+			// mejor sacarlo a una función resize (más legible)
 	        capacity *= 2;
 	        T* temp = new T[capacity];
 	        int tempTop = -1;
